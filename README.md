@@ -10,8 +10,9 @@
 [![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Twitter)](https://twitter.com/mausam)
 -->
 
-[![ReadTheDocs](https://readthedocs.org/projects/mausam/badge/?version=latest)](https://mausam.readthedocs.io/en/stable/)
-[![PyPI-Server](https://img.shields.io/pypi/v/mausam.svg)](https://pypi.org/project/mausam/)
+[![PyPI](https://img.shields.io/pypi/v/mausam.svg)](https://pypi.org/project/mausam/)
+[![Docs](https://readthedocs.org/projects/mausam/badge/?version=latest)](https://mausam.readthedocs.io/en/stable/)
+![Tests](https://github.com/m-anish/mausam/actions/workflows/ci.yml/badge.svg)
 [![Project generated with PyScaffold](https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold)](https://pyscaffold.org/)
 
 # mausam
