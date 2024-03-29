@@ -131,6 +131,9 @@ def main(args):
           (for example  ``["--verbose", "42"]``).
     """
     args = parse_args(args)
+
+    # The line below is a remnant from the time when the script was meant
+    # to be invoked from the command line
     # setup_logging(args.loglevel)
     setup_logging(logging.DEBUG)
     _logger.debug(args)
