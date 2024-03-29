@@ -20,3 +20,4 @@ parts:
 apps:
   fibonacci:
     command: bin/fibonacci
+    daemon: simple
