@@ -23,6 +23,7 @@ References:
 import argparse
 import logging
 import sys
+from time import sleep
 
 from mausam import __version__
 
@@ -40,7 +41,7 @@ _logger = logging.getLogger(__name__)
 # when using this Python module as a library.
 
 
-def fib(n):
+def fib(n=10):
     """Fibonacci example function
 
     Args:
@@ -78,7 +79,14 @@ def parse_args(args):
         action="version",
         version=f"mausam {__version__}",
     )
-    parser.add_argument(dest="n", help="n-th Fibonacci number", type=int, metavar="INT")
+    parser.add_argument(
+        "-n",
+        "--number",
+        dest="n",
+        help="n-th Fibonacci number",
+        type=int,
+        metavar="INT",
+    )
     parser.add_argument(
         "-v",
         "--verbose",
@@ -124,6 +132,7 @@ def main(args):
     setup_logging(args.loglevel)
     _logger.debug("Starting crazy calculations...")
     print(f"The {args.n}-th Fibonacci number is {fib(args.n)}")
+    _logger.info(f"The {args.n}-th Fibonacci number is {fib(args.n)}")
     _logger.info("Script ends here")
 
 
@@ -146,4 +155,6 @@ if __name__ == "__main__":
     #
     #     python -m mausam.skeleton 42
     #
-    run()
+    while True:
+        run()
+        sleep(20)
