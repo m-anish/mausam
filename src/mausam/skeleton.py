@@ -41,7 +41,7 @@ _logger = logging.getLogger(__name__)
 # when using this Python module as a library.
 
 
-def fib(n=10):
+def fib(n):
     """Fibonacci example function
 
     Args:
@@ -84,6 +84,8 @@ def parse_args(args):
         "--number",
         dest="n",
         help="n-th Fibonacci number",
+        nargs="?",
+        default=10,
         type=int,
         metavar="INT",
     )
@@ -129,11 +131,13 @@ def main(args):
           (for example  ``["--verbose", "42"]``).
     """
     args = parse_args(args)
-    setup_logging(args.loglevel)
+    # setup_logging(args.loglevel)
+    setup_logging(logging.DEBUG)
+    _logger.debug(args)
     _logger.debug("Starting crazy calculations...")
-    print(f"The {args.n}-th Fibonacci number is {fib(args.n)}")
-    _logger.info(f"The {args.n}-th Fibonacci number is {fib(args.n)}")
-    _logger.info("Script ends here")
+    while True:
+        _logger.info(f"The {args.n}-th Fibonacci number is {fib(args.n)}")
+        sleep(20)
 
 
 def run():
@@ -155,6 +159,4 @@ if __name__ == "__main__":
     #
     #     python -m mausam.skeleton 42
     #
-    while True:
-        run()
-        sleep(20)
+    run()
